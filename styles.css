@@ -1,0 +1,538 @@
+/* Основные стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ffeef8 0%, #ffe0f0 50%, #ffd1e8 100%);
+    color: #8b4a6b;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Навигация */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 182, 193, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 15px 0;
+    box-shadow: 0 2px 20px rgba(255, 105, 180, 0.3);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.nav-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: #d63384;
+    font-weight: 700;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #8b4a6b;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #d63384;
+    transform: translateY(-2px);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #ff69b4, #ff1493);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Главная секция */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: linear-gradient(135deg, #ffeef8 0%, #ffe0f0 50%, #ffd1e8 100%);
+}
+
+.hero-content {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    color: #d63384;
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: #8b4a6b;
+    margin-bottom: 40px;
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+/* Плавающие розы */
+.floating-roses {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.rose {
+    position: absolute;
+    font-size: 2rem;
+    animation: float 6s ease-in-out infinite;
+}
+
+.rose-1 {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.rose-2 {
+    top: 60%;
+    left: 80%;
+    animation-delay: 1s;
+}
+
+.rose-3 {
+    top: 30%;
+    left: 70%;
+    animation-delay: 2s;
+}
+
+.rose-4 {
+    top: 80%;
+    left: 20%;
+    animation-delay: 3s;
+}
+
+.rose-5 {
+    top: 10%;
+    left: 90%;
+    animation-delay: 4s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(10deg);
+    }
+}
+
+/* Фото */
+.photo-placeholder {
+    margin-top: 40px;
+    animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.photo-frame {
+    width: 300px;
+    height: 400px;
+    margin: 0 auto;
+    border: 10px solid #ffb6c1;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
+    position: relative;
+    background: linear-gradient(45deg, #ffe0f0, #ffd1e8);
+}
+
+.main-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photo-placeholder-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: #8b4a6b;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Секции */
+.section-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    color: #d63384;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* 101 причина */
+.reasons-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #fff0f5 0%, #ffe4e1 100%);
+}
+
+.reasons-container {
+    position: relative;
+    height: 400px;
+    margin-bottom: 40px;
+}
+
+.reason-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    width: 600px;
+    height: 300px;
+    background: linear-gradient(135deg, #ffb6c1, #ffc0cb);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+    box-shadow: 0 15px 35px rgba(255, 105, 180, 0.3);
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.reason-card.active {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.reason-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #d63384;
+    margin-bottom: 20px;
+}
+
+.reason-text {
+    font-size: 1.5rem;
+    color: #8b4a6b;
+    line-height: 1.6;
+}
+
+.navigation-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.nav-btn {
+    background: linear-gradient(135deg, #ff69b4, #ff1493);
+    border: none;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+}
+
+.reason-counter {
+    font-size: 1.2rem;
+    color: #8b4a6b;
+    font-weight: 600;
+}
+
+/* Судьба */
+.destiny-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #ffeef8 0%, #ffe0f0 100%);
+}
+
+.destiny-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.destiny-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #8b4a6b;
+}
+
+.destiny-text p {
+    margin-bottom: 20px;
+}
+
+.destiny-photos {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.destiny-photo-item {
+    position: relative;
+    width: 250px;
+    height: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(255, 105, 180, 0.3);
+    background: linear-gradient(45deg, #ffe0f0, #ffd1e8);
+}
+
+.destiny-photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.destiny-photo-item .photo-placeholder-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: #8b4a6b;
+    font-size: 1rem;
+    text-align: center;
+    padding: 20px;
+}
+
+/* История */
+.story-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #fff0f5 0%, #ffe4e1 100%);
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, #ff69b4, #ff1493);
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+    margin-right: 60%;
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    margin-left: 60%;
+    text-align: left;
+}
+
+.timeline-date {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #ff69b4, #ff1493);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.timeline-content {
+    background: rgba(255, 182, 193, 0.3);
+    padding: 30px;
+    border-radius: 15px;
+    margin-top: 40px;
+}
+
+.timeline-content h3 {
+    color: #d63384;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.timeline-photo {
+    margin-top: 20px;
+}
+
+.timeline-photo img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(255, 105, 180, 0.3);
+}
+
+/* Будущее */
+.future-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #ffeef8 0%, #ffe0f0 100%);
+}
+
+.future-dreams {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.dream-item {
+    text-align: center;
+    background: rgba(255, 182, 193, 0.3);
+    padding: 40px 20px;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+}
+
+.dream-item:hover {
+    transform: translateY(-10px);
+}
+
+.dream-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.dream-item h3 {
+    color: #d63384;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.future-message {
+    text-align: center;
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: #8b4a6b;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.future-message p {
+    margin-bottom: 20px;
+}
+
+/* Анимации */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .destiny-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .destiny-photos {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .destiny-photo-item {
+        width: 280px;
+        height: 350px;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-content,
+    .timeline-item:nth-child(even) .timeline-content {
+        margin: 40px 20px 0 20px;
+        text-align: center;
+    }
+    
+    .future-dreams {
+        grid-template-columns: 1fr;
+    }
+    
+    .reason-card {
+        width: 90%;
+        height: auto;
+        min-height: 250px;
+    }
+}
